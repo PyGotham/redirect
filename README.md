@@ -22,3 +22,14 @@ $ uwsgi uwsgi.ini
 
 * `PORT`: The port to which the application should bind. If no value is
   provided, `8000` will be used.
+
+## Contributing
+
+Install the development requirements and enable
+[pre-commit](https://pre-commit.com). This will cause the code to be formatted
+automatically before you commit it.
+
+```
+$ pip3 install -r dev-requirements.txt
+$ pre-commit install
+```
