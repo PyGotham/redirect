@@ -33,3 +33,10 @@ automatically before you commit it.
 $ pip3 install -r dev-requirements.txt
 $ pre-commit install
 ```
+
+While linting and fixing will happen as part of pre-commit hooks, there is a
+test suite that can be run as well.
+
+```
+$ tox
+```
