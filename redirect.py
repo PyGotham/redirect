@@ -8,7 +8,10 @@ if TYPE_CHECKING:
 
 
 def app(environ: "WSGIEnvironment", start_response: "StartResponse") -> List[bytes]:
-    current_year = os.environ.get("PYGOTHAM_YEAR", datetime.now().year)
+    try:
+        current_year = int(os.environ["PYGOTHAM_YEAR"])
+    except (KeyError, ValueError):
+        current_year = datetime.now().year
     url = f"https://{current_year}.pygotham.org"
     start_response("302 Moved Temporarily", [("Location", url)])
     return [url.encode()]
