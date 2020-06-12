@@ -12,7 +12,7 @@ def app(environ: "WSGIEnvironment", start_response: "StartResponse") -> List[byt
         current_year = int(os.environ["PYGOTHAM_YEAR"])
     except (KeyError, ValueError):
         current_year = datetime.now().year
-    url = f"https://{current_year}.pygotham.org"
+    url = f"https://{current_year}.pygotham.tv"
     start_response("302 Moved Temporarily", [("Location", url)])
     return [url.encode()]
 
